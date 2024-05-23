@@ -46,3 +46,5 @@ class Store {
 }
 
 const store = new Store(tallyReducer, initialState);
+
+console.log("Initial State:", store.getState());
