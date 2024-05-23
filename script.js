@@ -50,3 +50,9 @@ const store = new Store(tallyReducer, initialState);
 store.subscribe(() => console.log("State:", store.getState()));
 
 console.log("Initial State:", store.getState());
+
+store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(decrement());
+store.dispatch(decrement());
+store.dispatch(reset());
