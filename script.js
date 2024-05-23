@@ -19,4 +19,28 @@ const tallyReducer = (state = initialState, action) => {
                     default:
                         return state;
     }
+};
+
+class Store {
+    constructor(reducer, initialState) {
+        this.reducer = reducer;
+        this.state = initialState;
+        this.lesteners = [];
+    }
+
+    getState() {
+        return this.state;
+    }
+
+    dispatch(action) {
+        this.state = this.reducer(this.state, action);
+        this.listeners.forEach((listener) => listener());
+    };
+
+    ubscribe(listener) {
+        this.listeners.push(listener);
+        return () => {
+            this.listeners = this.listeners.filter((1) => 1 !== listener);
+        };
+    }
 }
