@@ -44,3 +44,5 @@ class Store {
         };
     }
 }
+
+const store = new Store(tallyReducer, initialState);
