@@ -47,4 +47,6 @@ class Store {
 
 const store = new Store(tallyReducer, initialState);
 
+store.subscribe(() => console.log("State:", store.getState()));
+
 console.log("Initial State:", store.getState());
