@@ -43,8 +43,9 @@ const store = createStore({ count: 0 }, reducer);
   // Subscribe to state changes to log the state
 store.subscribe(() => console.log('State:', store.getState()));
 
-// Instantiate the store
-const store = new Store(tallyReducer, initialState);
+// Initial state logging
+console.log('Initial State:', store.getState());
+
 
 // Subscribe to state changes to log the state
 store.subscribe(() => console.log("State:", store.getState()));
