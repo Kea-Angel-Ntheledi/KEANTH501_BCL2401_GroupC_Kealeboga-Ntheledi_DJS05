@@ -47,7 +47,7 @@ store.subscribe(() => console.log('State:', store.getState()));
 console.log('Initial State:', store.getState());
 
 // Dispatching actions to demonstrate state changes
-store.dispatch({ type: 'INCREMENT' }); // Should log: State: { count: 1 }
-store.dispatch({ type: 'INCREMENT' }); // Should log: State: { count: 2 }
-store.dispatch({ type: 'DECREMENT' }); // Should log: State: { count: 1 }
+store.dispatch({ type: 'ADD' }); // Should log: State: { count: 1 }
+store.dispatch({ type: 'ADD' }); // Should log: State: { count: 2 }
+store.dispatch({ type: 'SUBTRACT' }); // Should log: State: { count: 1 }
 store.dispatch({ type: 'RESET' });     // Should log: State: { count: 0 }
