@@ -1,16 +1,26 @@
 const createStore = (initialState, reducer) => {
-    let state = initialState;
-    const listeners = [];
+  let state = initialState;
+  const listeners = [];
 
-    const subscribe = (listener) => {
-        listeners.push(listener);
-        return () => {
-            const index = listeners.indexOf(listener);
-            if (index > -1) {
-                listeners.splice(index, 1);
-            }
-        };
+  const subscribe = (listener) => {
+    listeners.push(listener);
+    return () => {
+      const index = listeners.indexOf(listener);
+      if (index > -1) {
+        listeners.splice(index, 1);
+      }
     };
+  };
+
+  const dispatch = (action) => {
+    state = reducer(state, action);
+    listeners.forEach((listener) => listener());
+  };
+
+  const getState = () => state;
+
+  return { dispatch, getState, subscribe };
+};
 
 
 // Define the reducer
