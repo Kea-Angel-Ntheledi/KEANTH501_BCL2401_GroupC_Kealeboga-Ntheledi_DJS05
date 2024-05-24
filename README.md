@@ -1,9 +1,20 @@
 # DJS05 Project Brief: Building a Redux-Inspired Store for a Tally App
 
-In this challenge, you will venture into the realm of state management by constructing a Redux-inspired store to manage the state of a simple Tally App. Your primary goal is to manage the app's state changes efficiently, focusing on core functionalities like incrementing, decrementing, and resetting a counter. Instead of rendering changes on the UI, you'll subscribe to state updates and log them to the console, highlighting the power of state management in applications.
+## Project Overview
+In this challenge, i ventured into the realm of state management by constructing a Redux-inspired store to manage the state of a simple Tally App. My goal was to manage the app's state changes efficiently, focusing on core functionalities like incrementing, decrementing, and resetting a counter. Instead of rendering changes on the UI, I subscribed to state updates and logged them to the console, highlighting the power of state management in applications.
 
 ## Objective
-Create a minimalistic, Redux-inspired store to manage and log the state of a counting Tally App. Your implementation will not involve UI rendering; instead, it will use console logs to demonstrate state management effectively.
+I created a minimalistic, Redux-inspired store to manage and log the state of a counting Tally App. My implementation did not involve UI rendering; instead, it  uses console logs to demonstrate state management effectively.
+
+## 
+
+
+
+
+
+
+
+
 
 Observer Pattern resource from Refactoring Guru: https://refactoring.guru/design-patterns/observer
 
