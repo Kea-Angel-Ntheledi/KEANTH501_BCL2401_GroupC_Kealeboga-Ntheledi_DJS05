@@ -46,15 +46,8 @@ store.subscribe(() => console.log('State:', store.getState()));
 // Initial state logging
 console.log('Initial State:', store.getState());
 
-
-// Subscribe to state changes to log the state
-store.subscribe(() => console.log("State:", store.getState()));
-
-// Initial state logging
-console.log("Initial State:", store.getState());
-
 // Dispatching actions to demonstrate state changes
-store.dispatch(increment()); // Should log: State: { count: 1 }
-store.dispatch(increment()); // Should log: State: { count: 2 }
-store.dispatch(decrement()); // Should log: State: { count: 1 }
-store.dispatch(reset()); // Should log: State: { count: 0 }
+store.dispatch({ type: 'INCREMENT' }); // Should log: State: { count: 1 }
+store.dispatch({ type: 'INCREMENT' }); // Should log: State: { count: 2 }
+store.dispatch({ type: 'DECREMENT' }); // Should log: State: { count: 1 }
+store.dispatch({ type: 'RESET' });     // Should log: State: { count: 0 }
