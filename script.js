@@ -1,15 +1,18 @@
-// Define action types
-const INCREMENT = "INCREMENT";
-const DECREMENT = "DECREMENT";
-const RESET = "RESET";
+const createStore = (initialState, reducer) => {
+  let state = initialState;
+  const listeners =[];
 
-// Define action creators
-const increment = () => ({ type: INCREMENT });
-const decrement = () => ({ type: DECREMENT });
-const reset = () => ({ type: RESET });
+  const subscribe = (listener) => {
+    listeners.push(listener);
+    return () => {
+      const index = listeners.indexOf(listener);
+      if (index > -1) {
+        listeners.splice(index, 1);
+      }
+    }
+    }
+  }
 
-// Define the initial state
-const initialState = { count: 0 };
 
 // Define the reducer
 const tallyReducer = (state = initialState, action) => {
