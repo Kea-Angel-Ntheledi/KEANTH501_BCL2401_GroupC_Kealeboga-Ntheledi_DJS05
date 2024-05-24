@@ -37,22 +37,8 @@ const reducer = (state = { count: 0}, action) => {
   }
 };
 
-// Define the Store class
-class Store {
-  constructor(reducer, initialState) {
-    this.reducer = reducer;
-    this.state = initialState;
-    this.listeners = []; //an empty array
-  }
-
-  getState() {
-    return this.state;
-  }
-
-  dispatch(action) {
-    this.state = this.reducer(this.state, action);
-    this.listeners.forEach((listener) => listener());
-  }
+// Create the store with the initial state and reducer
+const store = createStore({ count: 0 }, reducer);
 
   subscribe(listener) {
     this.listeners.push(listener);
