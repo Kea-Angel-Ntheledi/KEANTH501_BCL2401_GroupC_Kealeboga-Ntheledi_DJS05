@@ -40,13 +40,8 @@ const reducer = (state = { count: 0}, action) => {
 // Create the store with the initial state and reducer
 const store = createStore({ count: 0 }, reducer);
 
-  subscribe(listener) {
-    this.listeners.push(listener);
-    return () => {
-      this.listeners = this.listeners.filter((l) => l !== listener);
-    };
-  }
-}
+  // Subscribe to state changes to log the state
+store.subscribe(() => console.log('State:', store.getState()));
 
 // Instantiate the store
 const store = new Store(tallyReducer, initialState);
